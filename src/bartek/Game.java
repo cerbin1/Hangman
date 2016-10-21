@@ -12,6 +12,9 @@ class Game {
             if(word.checkIfCharacterIsInWord(console.getCharacterToCheck(), player)) {
                 Console.displayPlayerHitCharacter();
             }
+            else {
+                Console.displayPlayerNoHitCharacter();
+            }
 
             if (player.checkIfWordIsGuessed()) {
                 break;

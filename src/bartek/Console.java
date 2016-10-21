@@ -41,4 +41,8 @@ class Console {
     static void displayPlayerHitCharacter() {
         System.out.println("Jest!");
     }
+
+    static void displayPlayerNoHitCharacter() {
+        System.out.println("Nie udalo ci sie odgadnac literki.");
+    }
 }
