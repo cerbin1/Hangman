@@ -1,6 +1,10 @@
 package bartek;
 
 class Game {
+    public static void main(String[] args) {
+        new Game().run();
+    }
+
     void run() {
         Console console = new Console();
         WordToGuess word = new WordToGuess();
@@ -16,7 +20,7 @@ class Game {
                 player.incrementChances();
             }
 
-            if(player.checkIfPlayerLose()) {
+            if (player.checkIfPlayerLose()) {
                 Console.displayPlayersLose();
                 break;
             }

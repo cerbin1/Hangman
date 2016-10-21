@@ -1,8 +1,12 @@
 package bartek;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 class Player {
     private String name;
-    boolean[] usersWord;
+    List<Boolean> usersWord;
     private int fails = 0;
 
     Player(String name, int length) {
@@ -15,19 +19,12 @@ class Player {
     }
 
     private void fillUsersWord(int length) {
-        usersWord = new boolean[length];
-        for (int i = 0; i < length; i++) {
-            usersWord[i] = false;
-        }
+        usersWord = new ArrayList<>(length);
+        Collections.fill(usersWord, Boolean.TRUE);
     }
 
     boolean checkIfWordIsGuessed() {
-        for (int i = 0; i < usersWord.length; i++) {
-            if (!usersWord[i]) {
-                return false;
-            }
-        }
-        return true;
+        return !usersWord.contains(false);
     }
 
     void incrementChances() {

@@ -3,26 +3,25 @@ package bartek;
 import java.util.Scanner;
 
 class Console {
-    private Scanner scanner = new Scanner(System.in);
+    private Scanner scanner = new Scanner(System.in); // TODO to jako static, nie potrzebujesz różnych instancji Scannera do różnich instancji Console
 
     String getName() {
         askForName();
         return scanner.nextLine();
     }
 
-    private void askForName() {
+    private void askForName() { // TODO tą trzeba zinlinować
         System.out.print("Wpisz swoje imie: ");
     }
 
-    void displayHelloMessage(String name) {
+    void displayHelloMessage(String name) { // TODO dobrze że ta funkcja jest wydzielona, ale być może ten parametr mógłby zostać przkazany jako konstruktor?
         System.out.println("Witaj " + name);
     }
 
-    void displayBlankWord(WordToGuess word, Player player) {
+    void displayBlankWord(WordToGuess word, Player player) { // TODO paramsy do konstruktora
         for (int i = 0; i < word.getWordToGuess().length(); i++) {
-            if (player.usersWord[i]) {
+            if (player.usersWord.get(i)) {
                 System.out.print(word.getWordToGuess().charAt(i) + " ");
-
             } else {
                 System.out.print("_ ");
             }
