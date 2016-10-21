@@ -1,3 +1,5 @@
+package bartek;
+
 public class Words {
     private String[] wordsArray = {"zubr", "kot",  "pies",  "szczur",  "hipopotam",  "chomik",  "zyrafa",  "slon",  "polacy",  "kon"};
     private String wordToGuess;
