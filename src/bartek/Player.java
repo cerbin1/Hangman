@@ -4,18 +4,19 @@ class Player {
     private String name;
     boolean[] usersWord;
 
-    Player(String name) {
+    Player(String name, int length) {
         this.name = name;
+        fillUsersWord(length);
     }
 
     String getName() {
         return name;
     }
 
-    void fillUsersWord(int length) {
+    private void fillUsersWord(int length) {
         usersWord = new boolean[length];
         for (int i = 0; i < length; i++) {
-            usersWord[i] = true;
+            usersWord[i] = false;
         }
     }
 }
