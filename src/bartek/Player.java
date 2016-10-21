@@ -6,4 +6,8 @@ class Player {
     Player(String name) {
         this.name = name;
     }
+
+    String getName() {
+        return name;
+    }
 }

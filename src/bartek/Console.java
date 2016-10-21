@@ -13,4 +13,8 @@ class Console {
     private void askForName() {
         System.out.print("Wpisz swoje imie: ");
     }
+
+    void displayHelloMessage(String name) {
+        System.out.println("Witaj " + name);
+    }
 }
