@@ -1,6 +1,6 @@
 package bartek;
 
-class WordToGuess {
+class WordToGuess { // TODO rename to WordsRepository czy coś.
     private String[] wordsArray = {"zubr", "kot", "pies", "szczur", "hipopotam", "chomik", "zyrafa", "slon", "polacy", "kon"};
     private String wordToGuess;
 
@@ -22,7 +22,7 @@ class WordToGuess {
         boolean isCharacterInWord = false;
         for (int i = 0; i < wordToGuess.length(); i++) {
             if (wordToGuess.charAt(i) == character) {
-                player.usersWord[i] = true;
+                player.usersWord.set(i, true);
                 isCharacterInWord = true;
             }
         }
