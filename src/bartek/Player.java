@@ -22,8 +22,10 @@ class Player {
 
     boolean checkIfWordIsGuessed() {
         for (int i = 0; i < usersWord.length; i++) {
-            return usersWord[i];
+            if (!usersWord[i]) {
+                return false;
+            }
         }
-        return false;
+        return true;
     }
 }

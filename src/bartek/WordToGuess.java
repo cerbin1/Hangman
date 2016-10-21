@@ -17,4 +17,12 @@ class WordToGuess {
     String getWordToGuess() {
         return wordToGuess;
     }
+
+    void checkIfCharacterIsInWord(char character, Player player) {
+        for (int i = 0; i < wordToGuess.length(); i++) {
+            if(wordToGuess.charAt(i) == character) {
+                player.usersWord[i] = true;
+            }
+        }
+    }
 }

@@ -29,7 +29,7 @@ class Console {
         }
     }
 
-    Character characterToCheck() {
+    Character getCharacterToCheck() {
         askForCharacter();
         return scanner.next().charAt(0);
     }
