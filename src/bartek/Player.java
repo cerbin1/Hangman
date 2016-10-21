@@ -19,4 +19,11 @@ class Player {
             usersWord[i] = false;
         }
     }
+
+    boolean checkIfWordIsGuessed() {
+        for (int i = 0; i < usersWord.length; i++) {
+            return usersWord[i];
+        }
+        return false;
+    }
 }
