@@ -3,7 +3,7 @@ package bartek;
 import java.util.Scanner;
 
 class Console {
-    private Scanner scanner = new Scanner(System.in); // TODO to jako static, nie potrzebujesz różnych instancji Scannera do różnich instancji Console
+    private static Scanner scanner = new Scanner(System.in);
 
     String getName() {
         askForName();
