@@ -9,7 +9,10 @@ class Game {
 
         while (true) {
             console.displayBlankWord(word, player);
-            word.checkIfCharacterIsInWord(console.getCharacterToCheck(), player);
+            if(word.checkIfCharacterIsInWord(console.getCharacterToCheck(), player)) {
+                Console.displayPlayerHitCharacter();
+            }
+
             if (player.checkIfWordIsGuessed()) {
                 break;
             }

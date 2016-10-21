@@ -18,11 +18,14 @@ class WordToGuess {
         return wordToGuess;
     }
 
-    void checkIfCharacterIsInWord(char character, Player player) {
+    boolean checkIfCharacterIsInWord(char character, Player player) {
+        boolean isCharacterInWord = false;
         for (int i = 0; i < wordToGuess.length(); i++) {
             if(wordToGuess.charAt(i) == character) {
                 player.usersWord[i] = true;
+                isCharacterInWord = true;
             }
         }
+        return isCharacterInWord;
     }
 }
