@@ -23,4 +23,13 @@ class Console {
             System.out.print("_ ");
         }
     }
+
+    Character characterToCheck() {
+        askForCharacter();
+        return scanner.next().charAt(0);
+    }
+
+    private void askForCharacter() {
+        System.out.println("Podaj literke");
+    }
 }
