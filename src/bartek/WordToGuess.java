@@ -7,6 +7,7 @@ class WordToGuess {
     WordToGuess() {
         int randomNumber = (int) (Math.round(Math.random() * 10));
         wordToGuess = getWordToGuess(randomNumber);
+        System.out.println(wordToGuess);
     }
 
     private String getWordToGuess(int indexNumber) {

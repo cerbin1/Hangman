@@ -18,9 +18,14 @@ class Console {
         System.out.println("Witaj " + name);
     }
 
-    void displayBlankWord(int length) {
-        for (int i = 0; i < length; i++) {
-            System.out.print("_ ");
+    void displayBlankWord(WordToGuess word, Player player) {
+        for (int i = 0; i < word.getWordToGuess().length(); i++) {
+            if (player.usersWord[i]) {
+                System.out.print(word.getWordToGuess().charAt(i) + " ");
+
+            } else {
+                System.out.print("_ ");
+            }
         }
     }
 

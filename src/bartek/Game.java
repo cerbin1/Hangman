@@ -6,7 +6,8 @@ class Game {
         WordToGuess word = new WordToGuess();
         Player player = new Player("Marian"); //TODO change name to get it from user
         console.displayHelloMessage(player.getName());
-        console.displayBlankWord(word.getWordToGuess().length());
+        player.fillUsersWord(word.getWordToGuess().length());
+        console.displayBlankWord(word, player);
 
     }
 }
