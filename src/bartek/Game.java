@@ -9,10 +9,9 @@ class Game {
 
         while (true) {
             console.displayBlankWord(word, player);
-            if(word.checkIfCharacterIsInWord(console.getCharacterToCheck(), player)) {
+            if (word.checkIfCharacterIsInWord(console.getCharacterToCheck(), player)) {
                 Console.displayPlayerHitCharacter();
-            }
-            else {
+            } else {
                 Console.displayPlayerNoHitCharacter();
                 player.incrementChances();
             }

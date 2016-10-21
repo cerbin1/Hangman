@@ -1,7 +1,7 @@
 package bartek;
 
 class WordToGuess {
-    private String[] wordsArray = {"zubr", "kot",  "pies",  "szczur",  "hipopotam",  "chomik",  "zyrafa",  "slon",  "polacy",  "kon"};
+    private String[] wordsArray = {"zubr", "kot", "pies", "szczur", "hipopotam", "chomik", "zyrafa", "slon", "polacy", "kon"};
     private String wordToGuess;
 
     WordToGuess() {
@@ -21,7 +21,7 @@ class WordToGuess {
     boolean checkIfCharacterIsInWord(char character, Player player) {
         boolean isCharacterInWord = false;
         for (int i = 0; i < wordToGuess.length(); i++) {
-            if(wordToGuess.charAt(i) == character) {
+            if (wordToGuess.charAt(i) == character) {
                 player.usersWord[i] = true;
                 isCharacterInWord = true;
             }
