@@ -37,4 +37,8 @@ class Player {
     int getFails() {
         return fails;
     }
+
+    boolean checkIfPlayerLose() {
+        return fails == 11;
+    }
 }

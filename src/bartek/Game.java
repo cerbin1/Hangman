@@ -16,6 +16,11 @@ class Game {
                 player.incrementChances();
             }
 
+            if(player.checkIfPlayerLose()) {
+                Console.displayPlayersLose();
+                break;
+            }
+
             if (player.checkIfWordIsGuessed()) {
                 break;
             }

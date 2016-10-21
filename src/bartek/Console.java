@@ -45,4 +45,8 @@ class Console {
     static void displayPlayerNoHitCharacter() {
         System.out.println("Nie udalo ci sie odgadnac literki.");
     }
+
+    static void displayPlayersLose() {
+        System.out.println("Przegrales");
+    }
 }
