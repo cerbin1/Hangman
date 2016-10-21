@@ -17,4 +17,10 @@ class Console {
     void displayHelloMessage(String name) {
         System.out.println("Witaj " + name);
     }
+
+    void displayBlankWord(int length) {
+        for (int i = 0; i < length; i++) {
+            System.out.print("_ ");
+        }
+    }
 }
