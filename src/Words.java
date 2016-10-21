@@ -4,9 +4,10 @@ public class Words {
 
     public Words() {
         int randomNumber = (int) (Math.round(Math.random() * 10));
+        wordToGuess = getWordToGuess(randomNumber);
     }
 
-    public String getWordToGuess(int indexNumber) {
+    private String getWordToGuess(int indexNumber) {
         return wordsArray[indexNumber];
     }
 }
