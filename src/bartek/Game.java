@@ -14,6 +14,7 @@ class Game {
             }
             else {
                 Console.displayPlayerNoHitCharacter();
+                player.incrementChances();
             }
 
             if (player.checkIfWordIsGuessed()) {

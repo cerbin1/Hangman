@@ -3,6 +3,7 @@ package bartek;
 class Player {
     private String name;
     boolean[] usersWord;
+    private int chances = 0;
 
     Player(String name, int length) {
         this.name = name;
@@ -27,5 +28,13 @@ class Player {
             }
         }
         return true;
+    }
+
+    void incrementChances() {
+        chances++;
+    }
+
+    int getChances() {
+        return chances;
     }
 }
