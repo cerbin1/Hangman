@@ -48,7 +48,7 @@ public class WordToGuess {
         return sb.toString();
     }
 
-    boolean checkIfWordIsGuessed() {
+    boolean isGuessed() {
         return !userWord.contains(Boolean.FALSE);
     }
 

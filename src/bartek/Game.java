@@ -32,7 +32,7 @@ class Game {
                 return;
             }
 
-            if (wordToGuess.checkIfWordIsGuessed()) {
+            if (wordToGuess.isGuessed()) {
                 notifyPlayerWin();
                 return;
             }
@@ -58,8 +58,8 @@ class Game {
     }
 
     private void notifyPlayerWin() {
-        System.out.print(wordToGuess.getBlankedWord());
-        System.out.println("\nUdalo Ci sie wygrac!");
+        System.out.println(wordToGuess.getBlankedWord());
+        System.out.println("Udalo Ci sie wygrac!");
     }
 
     private void notifyPlayerLose() {
