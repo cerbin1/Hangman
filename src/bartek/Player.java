@@ -1,7 +1,6 @@
 package bartek;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 class Player {
@@ -20,11 +19,13 @@ class Player {
 
     private void fillUsersWord(int length) {
         usersWord = new ArrayList<>(length);
-        Collections.fill(usersWord, Boolean.TRUE);
+        for (int i = 0; i < length; i++) {
+            usersWord.add(i, Boolean.FALSE);
+        }
     }
 
     boolean checkIfWordIsGuessed() {
-        return !usersWord.contains(false);
+        return !usersWord.contains(Boolean.FALSE);
     }
 
     void incrementChances() {

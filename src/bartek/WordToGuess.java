@@ -22,7 +22,7 @@ class WordToGuess { // TODO rename to WordsRepository czy coś.
         boolean isCharacterInWord = false;
         for (int i = 0; i < wordToGuess.length(); i++) {
             if (wordToGuess.charAt(i) == character) {
-                player.usersWord.set(i, true);
+                player.usersWord.set(i, Boolean.TRUE);
                 isCharacterInWord = true;
             }
         }

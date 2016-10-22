@@ -15,6 +15,7 @@ class Console {
     }
 
     void displayBlankWord(WordToGuess word, Player player) { // TODO paramsy do konstruktora
+        System.out.println(player.usersWord.size());
         for (int i = 0; i < word.getWordToGuess().length(); i++) {
             if (player.usersWord.get(i)) {
                 System.out.print(word.getWordToGuess().charAt(i) + " ");
