@@ -6,14 +6,7 @@ class Game {
     }
 
     private void run() {
-        /*System.out.println("\n _______" +
-                "\n|       |" +
-                "\n|       O" +
-                "\n|      /|\\" +
-                "\n|       |" +
-                "\n|      / \\" +
-                "\n|_______");*/
-        System.out.println("\n|______");
+
         WordToGuess word = new WordToGuess();
         Player player = new Player("Marian", word.getWordToGuess().length()); //TODO change name to get it from user
         Console console = new Console(player, word);

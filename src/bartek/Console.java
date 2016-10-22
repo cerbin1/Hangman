@@ -7,6 +7,19 @@ class Console {
     private WordToGuess word;
     private Player player;
 
+    private static String[] hangmanCharacter = {"\n_______",
+            "\n|\n|\n|\n|\n|\n|\n|_______",
+            "\n ________\n|\n|\n|\n|\n|\n|_______",
+            "\n ________\n|        |\n|\n|\n|\n|\n|_______",
+            "\n ________\n|        |\n|        O\n|\n|\n|\n|_______",
+            "\n ________\n|        |\n|        O\n|        |\n|\n|\n|_______",
+            "\n ________\n|        |\n|        O\n|       /|\n|\n|\n|_______",
+            "\n ________\n|        |\n|        O\n|       /|\\\n|\n|\n|_______",
+            "\n ________\n|        |\n|        O\n|       /|\\\n|        |\n|\n|_______",
+            "\n ________\n|        |\n|        O\n|       /|\\\n|        |\n|       / \n|_______",
+            "\n ________\n|        |\n|        O\n|       /|\\\n|        |\n|       / \\\n|_______"
+    };
+
     Console(Player player, WordToGuess word) {
         this.word = word;
         this.player = player;
@@ -44,6 +57,7 @@ class Console {
 
     static void displayPlayerNoHitCharacter(int fails) {
         System.out.println("Nie udalo ci sie odgadnac literki. Liczba bledow: " + fails);
+        System.out.println(hangmanCharacter[--fails]);
     }
 
     static void displayPlayersLose(String guessedWord) {
