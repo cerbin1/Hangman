@@ -35,6 +35,19 @@ public class WordToGuess {
         return isCharacterInWord;
     }
 
+    String getBlankedWord() {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < wordToGuess.length(); i++) {
+            if (userWord.get(i)) {
+                sb.append(wordToGuess.charAt(i));
+                sb.append(" ");
+            } else {
+                sb.append("_ ");
+            }
+        }
+        return sb.toString();
+    }
+
     boolean checkIfWordIsGuessed() {
         return !userWord.contains(Boolean.FALSE);
     }

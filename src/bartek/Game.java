@@ -56,13 +56,7 @@ class Game {
     }
 
     void displayBlankWord() {
-        for (int i = 0; i < wordToGuess.length(); i++) {
-            if (usersWord.get(i)) {
-                System.out.print(wordToGuess.charAt(i) + " ");
-            } else {
-                System.out.print("_ ");
-            }
-        }
+        System.out.print(wordToGuess.getBlankedWord());
     }
 
     Character getCharacterToCheck() {
