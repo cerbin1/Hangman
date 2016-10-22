@@ -22,7 +22,7 @@ public class SearchWord {
     public boolean guessLetter(char character) {
         for (int i = 0; i < word.length(); i++) {
             if (word.charAt(i) == character && isLetterBlank(i)) {
-                blankedLetters.set(i, Boolean.TRUE);
+                revealLetter(i);
                 return true;
             }
         }
@@ -31,6 +31,10 @@ public class SearchWord {
 
     private boolean isLetterBlank(int i) {
         return !blankedLetters.get(i);
+    }
+
+    private Boolean revealLetter(int i) {
+        return blankedLetters.set(i, Boolean.TRUE);
     }
 
     String getBlankedWord() {
