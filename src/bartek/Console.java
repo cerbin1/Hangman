@@ -5,16 +5,12 @@ import java.util.Scanner;
 class Console {
     private static Scanner scanner = new Scanner(System.in);
 
-    String getName() {
-        askForName();
-        return scanner.nextLine();
+    Console(Player player) {
+        askForName(player.getName());
     }
 
-    private void askForName() { // TODO tą trzeba zinlinować
+    void askForName(String name) { // TODO dobrze że ta funkcja jest wydzielona, ale być może ten parametr mógłby zostać przkazany jako konstruktor?
         System.out.print("Wpisz swoje imie: ");
-    }
-
-    void displayHelloMessage(String name) { // TODO dobrze że ta funkcja jest wydzielona, ale być może ten parametr mógłby zostać przkazany jako konstruktor?
         System.out.println("Witaj " + name);
     }
 
