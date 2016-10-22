@@ -17,8 +17,9 @@ class Game {
 
         while (true) {
             System.out.print(wordToGuess.getBlankedWord());
-            if (wordToGuess.guessLetter(getCharacterToCheck())) {
-                notifyPlayerSuccess();
+            if (wordToGuess.guessLetter(readCharacter())) {
+                System.out.println("Odgadles litere!");
+                HangmanPrinter.print(fails);
             } else {
                 fails++;
                 System.out.println("Nie udalo ci sie odgadnac literki. Mozesz sie jeszcze pomylic " + (11 - fails) + " razy.");
@@ -43,13 +44,8 @@ class Game {
         return fails == 11;
     }
 
-    Character getCharacterToCheck() {
+    Character readCharacter() {
         System.out.print("\nPodaj literke: ");
         return scanner.next().charAt(0);
-    }
-
-    void notifyPlayerSuccess() {
-        System.out.println("Odgadles litere!");
-        HangmanPrinter.print(fails);
     }
 }
