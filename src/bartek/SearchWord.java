@@ -19,9 +19,9 @@ public class SearchWord {
         Collections.fill(blankedLetters, Boolean.FALSE);
     }
 
-    public boolean guessLetter(char character) {
+    public boolean guessLetter(char letter) {
         for (int i = 0; i < word.length(); i++) {
-            if (word.charAt(i) == character && isLetterBlank(i)) {
+            if (word.charAt(i) == letter && isLetterBlank(i)) {
                 revealLetter(i);
                 return true;
             }
