@@ -77,10 +77,6 @@ class Game {
         fails++;
     }
 
-    int getFails() {
-        return fails;
-    }
-
     boolean checkIfPlayerLose() {
         return fails == 11;
     }
@@ -123,12 +119,12 @@ class Game {
 
     void displayPlayerHitCharacter() {
         System.out.println("Odgadles litere!");
-        System.out.println(hangmanCharacter[getFails()]);
+        System.out.println(hangmanCharacter[fails]);
     }
 
     void displayPlayerNoHitCharacter() {
-        System.out.println("Nie udalo ci sie odgadnac literki. Mozesz sie jeszcze pomylic " + (11 - getFails()) + " razy.");
-        System.out.println(hangmanCharacter[getFails()]);
+        System.out.println("Nie udalo ci sie odgadnac literki. Mozesz sie jeszcze pomylic " + (11 - fails) + " razy.");
+        System.out.println(hangmanCharacter[fails]);
     }
 
     static void displayPlayersLose(String guessedWord) {
