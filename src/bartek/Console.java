@@ -13,12 +13,12 @@ class Console {
         askForName();
     }
 
-    private void askForName() { // TODO dobrze że ta funkcja jest wydzielona, ale być może ten parametr mógłby zostać przkazany jako konstruktor?
+    private void askForName() {
         System.out.print("Wpisz swoje imie: ");
         System.out.println("Witaj " + player.getName());
     }
 
-    void displayBlankWord() { // TODO paramsy do konstruktora
+    void displayBlankWord() {
         System.out.println(player.usersWord.size());
         for (int i = 0; i < word.getWordToGuess().length(); i++) {
             if (player.usersWord.get(i)) {
