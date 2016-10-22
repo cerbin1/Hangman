@@ -7,7 +7,7 @@ import java.util.List;
 
 public class SearchWord {
     private String word;
-    private List<Boolean> userWord = new ArrayList<>();
+    private List<Boolean> blankedLetters = new ArrayList<>();
 
     public SearchWord(String wordToGuess) {
         this.word = wordToGuess;
@@ -15,24 +15,28 @@ public class SearchWord {
     }
 
     private void fillUsersWord(int size) {
-        userWord.addAll(Arrays.asList(new Boolean[size]));
-        Collections.fill(userWord, Boolean.FALSE);
+        blankedLetters.addAll(Arrays.asList(new Boolean[size]));
+        Collections.fill(blankedLetters, Boolean.FALSE);
     }
 
     public boolean guessLetter(char character) {
         for (int i = 0; i < word.length(); i++) {
-            if (word.charAt(i) == character && !userWord.get(i)) {
-                userWord.set(i, Boolean.TRUE);
+            if (word.charAt(i) == character && isLetterBlank(i)) {
+                blankedLetters.set(i, Boolean.TRUE);
                 return true;
             }
         }
         return false;
     }
 
+    private boolean isLetterBlank(int i) {
+        return !blankedLetters.get(i);
+    }
+
     String getBlankedWord() {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < word.length(); i++) {
-            if (userWord.get(i)) {
+            if (blankedLetters.get(i)) {
                 sb.append(word.charAt(i));
                 sb.append(" ");
             } else {
@@ -43,7 +47,7 @@ public class SearchWord {
     }
 
     boolean isGuessed() {
-        return !userWord.contains(Boolean.FALSE);
+        return !blankedLetters.contains(Boolean.FALSE);
     }
 
     public String getWord() {
