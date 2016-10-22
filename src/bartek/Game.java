@@ -2,8 +2,11 @@ package bartek;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 class Game {
+    private final static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
         new Game().run();
     }
@@ -23,14 +26,16 @@ class Game {
     };
 
 
-    private String[] wordsArray = {"zubr", "kot", "pies", "szczur", "hipopotam", "chomik", "zyrafa", "slon", "polacy", "kon"};
+    private String[] words = {
+            "zubr", "kot", "pies", "szczur", "hipopotam", "chomik", "zyrafa", "slon", "polacy", "kon"
+    };
     private String wordToGuess;
 
-    private String name;
     List<Boolean> usersWord;
     private int fails = 0;
 
     private void run() {
+        String name = askForName();
         Player player = new Player("Marian", word.getWordToGuess().length()); //TODO change name to get it from user
 
         int randomNumber = (int) (Math.round(Math.random() * 10));
@@ -58,7 +63,6 @@ class Game {
             }
         }
     }
-
 
     private void fillUsersWord(int length) {
         usersWord = new ArrayList<>(length);
@@ -104,10 +108,9 @@ class Game {
         return isCharacterInWord;
     }
 
-
-    private void askForName() {
+    private String askForName() {
         System.out.print("Wpisz swoje imie: ");
-        System.out.println("Witaj " + player.getName());
+        return scanner.nextLine();
     }
 
     void displayBlankWord() {
