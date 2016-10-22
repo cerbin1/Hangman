@@ -15,8 +15,8 @@ class Game {
             if (word.checkIfCharacterIsInWord(console.getCharacterToCheck(), player)) {
                 Console.displayPlayerHitCharacter();
             } else {
-                Console.displayPlayerNoHitCharacter();
                 player.incrementChances();
+                Console.displayPlayerNoHitCharacter(player.getFails());
             }
 
             if (player.checkIfPlayerLose()) {

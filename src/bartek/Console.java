@@ -38,8 +38,8 @@ class Console {
         System.out.println("Jest!");
     }
 
-    static void displayPlayerNoHitCharacter() {
-        System.out.println("Nie udalo ci sie odgadnac literki.");
+    static void displayPlayerNoHitCharacter(int fails) {
+        System.out.println("Nie udalo ci sie odgadnac literki. Liczba bledow: " + fails);
     }
 
     static void displayPlayersLose(String guessedWord) {
