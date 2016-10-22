@@ -50,7 +50,7 @@ class Game {
             }
 
             if (checkIfPlayerLose()) {
-                displayPlayersLose(getWordToGuess());
+                displayPlayersLose(wordToGuess);
                 break;
             }
 
@@ -85,11 +85,6 @@ class Game {
         return fails == 11;
     }
 
-
-    String getWordToGuess() {
-        return wordToGuess;
-    }
-
     boolean checkIfCharacterIsInWord(char character) {
         boolean isCharacterInWord = false;
         for (int i = 0; i < wordToGuess.length(); i++) {
@@ -112,9 +107,9 @@ class Game {
     }
 
     void displayBlankWord() {
-        for (int i = 0; i < getWordToGuess().length(); i++) {
+        for (int i = 0; i < wordToGuess.length(); i++) {
             if (usersWord.get(i)) {
-                System.out.print(getWordToGuess().charAt(i) + " ");
+                System.out.print(wordToGuess.charAt(i) + " ");
             } else {
                 System.out.print("_ ");
             }
