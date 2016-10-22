@@ -42,19 +42,19 @@ class Game {
 
         while (true) {
             displayBlankWord();
-            if (word.checkIfCharacterIsInWord(getCharacterToCheck())) {
+            if (checkIfCharacterIsInWord(getCharacterToCheck())) {
                 displayPlayerHitCharacter();
             } else {
-                player.incrementChances();
+                incrementChances();
                 displayPlayerNoHitCharacter();
             }
 
-            if (player.checkIfPlayerLose()) {
-                displayPlayersLose(word.getWordToGuess());
+            if (checkIfPlayerLose()) {
+                displayPlayersLose(getWordToGuess());
                 break;
             }
 
-            if (player.checkIfWordIsGuessed()) {
+            if (checkIfWordIsGuessed()) {
                 displayBlankWord();
                 displayPlayersWin();
                 break;
@@ -94,11 +94,11 @@ class Game {
         boolean isCharacterInWord = false;
         for (int i = 0; i < wordToGuess.length(); i++) {
             if (wordToGuess.charAt(i) == character) {
-                if (player.usersWord.get(i)) {
+                if (usersWord.get(i)) {
                     System.out.println("Odkryles juz ta literke!");
                     return isCharacterInWord;
                 } else {
-                    player.usersWord.set(i, Boolean.TRUE);
+                    usersWord.set(i, Boolean.TRUE);
                     isCharacterInWord = true;
                 }
             }
@@ -112,9 +112,9 @@ class Game {
     }
 
     void displayBlankWord() {
-        for (int i = 0; i < word.getWordToGuess().length(); i++) {
-            if (player.usersWord.get(i)) {
-                System.out.print(word.getWordToGuess().charAt(i) + " ");
+        for (int i = 0; i < getWordToGuess().length(); i++) {
+            if (usersWord.get(i)) {
+                System.out.print(getWordToGuess().charAt(i) + " ");
             } else {
                 System.out.print("_ ");
             }
@@ -128,12 +128,12 @@ class Game {
 
     void displayPlayerHitCharacter() {
         System.out.println("Odgadles litere!");
-        System.out.println(hangmanCharacter[player.getFails()]);
+        System.out.println(hangmanCharacter[getFails()]);
     }
 
     void displayPlayerNoHitCharacter() {
-        System.out.println("Nie udalo ci sie odgadnac literki. Mozesz sie jeszcze pomylic " + (11 - player.getFails()) + " razy.");
-        System.out.println(hangmanCharacter[player.getFails()]);
+        System.out.println("Nie udalo ci sie odgadnac literki. Mozesz sie jeszcze pomylic " + (11 - getFails()) + " razy.");
+        System.out.println(hangmanCharacter[getFails()]);
     }
 
     static void displayPlayersLose(String guessedWord) {
