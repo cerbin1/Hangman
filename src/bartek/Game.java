@@ -11,9 +11,7 @@ class Game {
         new Game().run();
     }
 
-    private String[] words = {
-            "zubr", "kot", "pies", "szczur", "hipopotam", "chomik", "zyrafa", "slon", "polacy", "kon"
-    };
+    private WordRepository wordRepository = new WordRepository();
     private String wordToGuess;
 
     List<Boolean> usersWord;
@@ -22,8 +20,7 @@ class Game {
     private void run() {
         String name = askForName();
 
-        int questionIndex = (int) (Math.round(Math.random() * words.length));
-        wordToGuess = words[questionIndex];
+        wordToGuess = wordRepository.getRandomWord();
         fillUsersWord(wordToGuess.length());
 
         while (true) {
