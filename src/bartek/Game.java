@@ -26,7 +26,7 @@ class Game {
             }
             HangmanPrinter.print(fails);
 
-            if (checkIfPlayerLose()) {
+            if (playerLose()) {
                 System.out.println("Przegrales :/");
                 System.out.println("Wylosowane slowo to: " + wordToGuess.getWord());
                 return;
@@ -49,8 +49,8 @@ class Game {
         System.out.println("Nie udalo ci sie odgadnac literki. Mozesz sie jeszcze pomylic " + (11 - fails) + " razy.");
     }
 
-    boolean checkIfPlayerLose() {
-        return fails == 11;
+    boolean playerLose() {
+        return fails >= 11;
     }
 
     Character readCharacter() {
