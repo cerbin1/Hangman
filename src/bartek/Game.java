@@ -29,10 +29,10 @@ class Game {
         while (true) {
             displayBlankWord();
             if (checkIfCharacterIsInWord(getCharacterToCheck())) {
-                displayPlayerHitCharacter();
+                notifyPlayerSuccess();
             } else {
                 incrementChances();
-                displayPlayerNoHitCharacter();
+                notifyPlayerFailure();
             }
 
             if (checkIfPlayerLose()) {
@@ -103,12 +103,12 @@ class Game {
         return scanner.next().charAt(0);
     }
 
-    void displayPlayerHitCharacter() {
+    void notifyPlayerSuccess() {
         System.out.println("Odgadles litere!");
         HangmanPrinter.print(fails);
     }
 
-    void displayPlayerNoHitCharacter() {
+    void notifyPlayerFailure() {
         System.out.println("Nie udalo ci sie odgadnac literki. Mozesz sie jeszcze pomylic " + (11 - fails) + " razy.");
         HangmanPrinter.print(fails);
     }
