@@ -6,7 +6,7 @@ public class WordRepository {
     };
 
     public SearchWord getRandomWord() {
-        int questionIndex = (int) (Math.round(Math.random() * words.length));
+        int questionIndex = (int) (Math.floor(Math.random() * words.length));
         String randomWord = words[questionIndex];
         return new SearchWord(randomWord);
     }
