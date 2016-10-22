@@ -9,7 +9,7 @@ class Console {
         askForName(player.getName());
     }
 
-    void askForName(String name) { // TODO dobrze że ta funkcja jest wydzielona, ale być może ten parametr mógłby zostać przkazany jako konstruktor?
+    private void askForName(String name) { // TODO dobrze że ta funkcja jest wydzielona, ale być może ten parametr mógłby zostać przkazany jako konstruktor?
         System.out.print("Wpisz swoje imie: ");
         System.out.println("Witaj " + name);
     }
