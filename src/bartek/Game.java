@@ -17,11 +17,12 @@ class Game {
 
         while (true) {
             System.out.print(wordToGuess.getBlankedWord());
-            if (wordToGuess.guessLetter(readCharacter())) {
-                System.out.println("Odgadles litere!");
+            Character character = readCharacter();
+
+            if (wordToGuess.guessLetter(character)) {
+                notifySuccessGuess();
             } else {
-                fails++;
-                System.out.println("Nie udalo ci sie odgadnac literki. Mozesz sie jeszcze pomylic " + (11 - fails) + " razy.");
+                notifyFailedGuess();
             }
             HangmanPrinter.print(fails);
 
@@ -37,6 +38,15 @@ class Game {
                 return;
             }
         }
+    }
+
+    private void notifySuccessGuess() {
+        System.out.println("Odgadles litere!");
+    }
+
+    private void notifyFailedGuess() {
+        fails++;
+        System.out.println("Nie udalo ci sie odgadnac literki. Mozesz sie jeszcze pomylic " + (11 - fails) + " razy.");
     }
 
     boolean checkIfPlayerLose() {
