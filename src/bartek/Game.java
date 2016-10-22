@@ -28,13 +28,13 @@ class Game {
             if (checkIfPlayerLose()) {
                 System.out.println("Przegrales :/");
                 System.out.println("Wylosowane slowo to: " + wordToGuess.getWord());
-                break;
+                return;
             }
 
             if (wordToGuess.checkIfWordIsGuessed()) {
                 System.out.print(wordToGuess.getBlankedWord());
                 System.out.println("\nUdalo Ci sie wygrac!");
-                break;
+                return;
             }
         }
     }
