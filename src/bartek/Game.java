@@ -37,8 +37,8 @@ class Game {
     private void run() {
         String name = askForName();
 
-        int questionIndex = (int) (Math.round(Math.random() * 10));
-        wordToGuess = getWordToGuess(questionIndex);
+        int questionIndex = (int) (Math.round(Math.random() * words.length));
+        wordToGuess = words[questionIndex];
 
         while (true) {
             console.displayBlankWord();
