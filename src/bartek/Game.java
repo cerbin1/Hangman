@@ -10,53 +10,44 @@ class Game {
     }
 
     private WordRepository wordRepository = new WordRepository();
-    private WordToGuess wordToGuess;
-
     private int fails = 0;
 
     private void run() {
         String name = askForName();
 
-        wordToGuess = wordRepository.getRandomWord();
+        WordToGuess wordToGuess = wordRepository.getRandomWord();
 
         while (true) {
-            displayBlankWord();
+            System.out.print(wordToGuess.getBlankedWord());
             if (wordToGuess.guessLetter(getCharacterToCheck())) {
                 notifyPlayerSuccess();
             } else {
-                incrementChances();
-                notifyPlayerFailure();
+                fails++;
+                System.out.println("Nie udalo ci sie odgadnac literki. Mozesz sie jeszcze pomylic " + (11 - fails) + " razy.");
+                HangmanPrinter.print(fails);
             }
 
             if (checkIfPlayerLose()) {
-                displayPlayersLose(wordToGuess.getWord());
+                System.out.println("Przegrales :/");
+                System.out.println("Wylosowane slowo to: " + wordToGuess.getWord());
                 break;
             }
 
             if (wordToGuess.checkIfWordIsGuessed()) {
-                displayBlankWord();
-                displayPlayersWin();
+                System.out.print(wordToGuess.getBlankedWord());
+                System.out.println("\nUdalo Ci sie wygrac!");
                 break;
             }
         }
-    }
-
-    void incrementChances() {
-        fails++;
     }
 
     boolean checkIfPlayerLose() {
         return fails == 11;
     }
 
-
     private String askForName() {
         System.out.print("Wpisz swoje imie: ");
         return scanner.nextLine();
-    }
-
-    void displayBlankWord() {
-        System.out.print(wordToGuess.getBlankedWord());
     }
 
     Character getCharacterToCheck() {
@@ -67,19 +58,5 @@ class Game {
     void notifyPlayerSuccess() {
         System.out.println("Odgadles litere!");
         HangmanPrinter.print(fails);
-    }
-
-    void notifyPlayerFailure() {
-        System.out.println("Nie udalo ci sie odgadnac literki. Mozesz sie jeszcze pomylic " + (11 - fails) + " razy.");
-        HangmanPrinter.print(fails);
-    }
-
-    static void displayPlayersLose(String searchWord) {
-        System.out.println("Przegrales :/");
-        System.out.println("Wylosowane slowo to: " + searchWord);
-    }
-
-    static void displayPlayersWin() {
-        System.out.println("\nUdalo Ci sie wygrac!");
     }
 }
