@@ -1,7 +1,5 @@
 package bartek;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 class Game {
@@ -23,7 +21,7 @@ class Game {
 
         while (true) {
             displayBlankWord();
-            if (checkIfCharacterIsInWord(getCharacterToCheck())) {
+            if (wordToGuess.guessLetter(getCharacterToCheck())) {
                 notifyPlayerSuccess();
             } else {
                 incrementChances();
@@ -51,21 +49,6 @@ class Game {
         return fails == 11;
     }
 
-    boolean checkIfCharacterIsInWord(char character) {
-        boolean isCharacterInWord = false;
-        for (int i = 0; i < wordToGuess.length(); i++) {
-            if (wordToGuess.charAt(i) == character) {
-                if (usersWord.get(i)) {
-                    System.out.println("Odkryles juz ta literke!");
-                    return isCharacterInWord;
-                } else {
-                    usersWord.set(i, Boolean.TRUE);
-                    isCharacterInWord = true;
-                }
-            }
-        }
-        return isCharacterInWord;
-    }
 
     private String askForName() {
         System.out.print("Wpisz swoje imie: ");

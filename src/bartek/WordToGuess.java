@@ -19,8 +19,20 @@ public class WordToGuess {
         Collections.fill(userWord, Boolean.FALSE);
     }
 
-    public boolean guessLetter(char letter) {
-
+    public boolean guessLetter(char character) {
+        boolean isCharacterInWord = false;
+        for (int i = 0; i < wordToGuess.length(); i++) {
+            if (wordToGuess.charAt(i) == character) {
+                if (userWord.get(i)) {
+                    System.out.println("Odkryles juz ta literke!");
+                    return isCharacterInWord;
+                } else {
+                    userWord.set(i, Boolean.TRUE);
+                    isCharacterInWord = true;
+                }
+            }
+        }
+        return isCharacterInWord;
     }
 
     boolean checkIfWordIsGuessed() {
