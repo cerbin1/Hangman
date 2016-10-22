@@ -7,17 +7,17 @@ class Game {
 
     private void run() {
 
-        WordRepository word = new WordRepository();
         Player player = new Player("Marian", word.getWordToGuess().length()); //TODO change name to get it from user
+        WordRepository word = new WordRepository(player);
         Console console = new Console(player, word);
 
         while (true) {
             console.displayBlankWord();
-            if (word.checkIfCharacterIsInWord(console.getCharacterToCheck(), player)) {
-                Console.displayPlayerHitCharacter(player.getFails());
+            if (word.checkIfCharacterIsInWord(console.getCharacterToCheck())) {
+                console.displayPlayerHitCharacter();
             } else {
                 player.incrementChances();
-                Console.displayPlayerNoHitCharacter(player.getFails());
+                console.displayPlayerNoHitCharacter();
             }
 
             if (player.checkIfPlayerLose()) {

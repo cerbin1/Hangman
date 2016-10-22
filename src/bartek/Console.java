@@ -51,14 +51,14 @@ class Console {
         System.out.print("\nPodaj literke: ");
     }
 
-    static void displayPlayerHitCharacter(int fails) {
+    void displayPlayerHitCharacter() {
         System.out.println("Odgadles litere!");
-        System.out.println(hangmanCharacter[fails]);
+        System.out.println(hangmanCharacter[player.getFails()]);
     }
 
-    static void displayPlayerNoHitCharacter(int fails) {
-        System.out.println("Nie udalo ci sie odgadnac literki. Mozesz sie jeszcze pomylic " + (11 - fails) + " razy.");
-        System.out.println(hangmanCharacter[fails]);
+    void displayPlayerNoHitCharacter() {
+        System.out.println("Nie udalo ci sie odgadnac literki. Mozesz sie jeszcze pomylic " + (11 - player.getFails()) + " razy.");
+        System.out.println(hangmanCharacter[player.getFails()]);
     }
 
     static void displayPlayersLose(String guessedWord) {

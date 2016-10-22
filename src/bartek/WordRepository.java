@@ -3,10 +3,12 @@ package bartek;
 class WordRepository {
     private String[] wordsArray = {"zubr", "kot", "pies", "szczur", "hipopotam", "chomik", "zyrafa", "slon", "polacy", "kon"};
     private String wordToGuess;
+    private Player player;
 
-    WordRepository() {
+    WordRepository(Player player) {
         int randomNumber = (int) (Math.round(Math.random() * 10));
         wordToGuess = getWordToGuess(randomNumber);
+        this.player = player;
     }
 
     private String getWordToGuess(int indexNumber) {
@@ -17,7 +19,7 @@ class WordRepository {
         return wordToGuess;
     }
 
-    boolean checkIfCharacterIsInWord(char character, Player player) {
+    boolean checkIfCharacterIsInWord(char character) {
         boolean isCharacterInWord = false;
         for (int i = 0; i < wordToGuess.length(); i++) {
             if (wordToGuess.charAt(i) == character) {
