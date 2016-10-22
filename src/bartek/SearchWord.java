@@ -20,19 +20,16 @@ public class SearchWord {
     }
 
     public boolean guessLetter(char character) {
-        boolean isCharacterInWord = false;
         for (int i = 0; i < word.length(); i++) {
             if (word.charAt(i) == character) {
                 if (userWord.get(i)) {
                     System.out.println("Odkryles juz ta literke!");
-                    return isCharacterInWord;
-                } else {
-                    userWord.set(i, Boolean.TRUE);
-                    isCharacterInWord = true;
+                    return false;
                 }
+                userWord.set(i, Boolean.TRUE);
             }
         }
-        return isCharacterInWord;
+        return true;
     }
 
     String getBlankedWord() {
