@@ -45,4 +45,8 @@ class Console {
     static void displayPlayersLose() {
         System.out.println("Przegrales");
     }
+
+    static void displayPlayersWin(String guessedWord) {
+        System.out.println("Udalo Ci sie wygrac! \nWylosowane slowo to: " + guessedWord);
+    }
 }

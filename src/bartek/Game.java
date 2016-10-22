@@ -25,6 +25,7 @@ class Game {
             }
 
             if (player.checkIfWordIsGuessed()) {
+                Console.displayPlayersWin(word.getWordToGuess());
                 break;
             }
         }
