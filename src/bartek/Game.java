@@ -14,7 +14,7 @@ class Game {
         while (true) {
             console.displayBlankWord();
             if (word.checkIfCharacterIsInWord(console.getCharacterToCheck(), player)) {
-                Console.displayPlayerHitCharacter();
+                Console.displayPlayerHitCharacter(player.getFails());
             } else {
                 player.incrementChances();
                 Console.displayPlayerNoHitCharacter(player.getFails());
