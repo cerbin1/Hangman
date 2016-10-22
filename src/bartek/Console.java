@@ -4,17 +4,21 @@ import java.util.Scanner;
 
 class Console {
     private static Scanner scanner = new Scanner(System.in);
+    private WordToGuess word;
+    private Player player;
 
-    Console(Player player) {
-        askForName(player.getName());
+    Console(Player player, WordToGuess word) {
+        this.word = word;
+        this.player = player;
+        askForName();
     }
 
-    private void askForName(String name) { // TODO dobrze że ta funkcja jest wydzielona, ale być może ten parametr mógłby zostać przkazany jako konstruktor?
+    private void askForName() { // TODO dobrze że ta funkcja jest wydzielona, ale być może ten parametr mógłby zostać przkazany jako konstruktor?
         System.out.print("Wpisz swoje imie: ");
-        System.out.println("Witaj " + name);
+        System.out.println("Witaj " + player.getName());
     }
 
-    void displayBlankWord(WordToGuess word, Player player) { // TODO paramsy do konstruktora
+    void displayBlankWord() { // TODO paramsy do konstruktora
         System.out.println(player.usersWord.size());
         for (int i = 0; i < word.getWordToGuess().length(); i++) {
             if (player.usersWord.get(i)) {
