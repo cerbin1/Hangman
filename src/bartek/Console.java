@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 class Console {
     private static Scanner scanner = new Scanner(System.in);
-    private WordToGuess word;
+    private WordRepository word;
     private Player player;
 
     private static String[] hangmanCharacter = {"",
@@ -21,7 +21,7 @@ class Console {
             "\n ________\n|        |\n|        O\n|       /|\\\n|        |\n|       / \\\n|_______"
     };
 
-    Console(Player player, WordToGuess word) {
+    Console(Player player, WordRepository word) {
         this.word = word;
         this.player = player;
         askForName();
@@ -33,7 +33,6 @@ class Console {
     }
 
     void displayBlankWord() {
-        System.out.println(player.usersWord.size());
         for (int i = 0; i < word.getWordToGuess().length(); i++) {
             if (player.usersWord.get(i)) {
                 System.out.print(word.getWordToGuess().charAt(i) + " ");
@@ -53,12 +52,12 @@ class Console {
     }
 
     static void displayPlayerHitCharacter(int fails) {
-        System.out.println("Jest!");
+        System.out.println("Odgadles litere!");
         System.out.println(hangmanCharacter[fails]);
     }
 
     static void displayPlayerNoHitCharacter(int fails) {
-        System.out.println("Nie udalo ci sie odgadnac literki. Liczba bledow: " + fails);
+        System.out.println("Nie udalo ci sie odgadnac literki. Mozesz sie jeszcze pomylic " + (11 - fails) + " razy.");
         System.out.println(hangmanCharacter[fails]);
     }
 

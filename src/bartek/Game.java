@@ -7,7 +7,7 @@ class Game {
 
     private void run() {
 
-        WordToGuess word = new WordToGuess();
+        WordRepository word = new WordRepository();
         Player player = new Player("Marian", word.getWordToGuess().length()); //TODO change name to get it from user
         Console console = new Console(player, word);
 

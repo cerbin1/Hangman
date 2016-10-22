@@ -1,13 +1,12 @@
 package bartek;
 
-class WordToGuess { // TODO rename to WordsRepository czy coś.
+class WordRepository {
     private String[] wordsArray = {"zubr", "kot", "pies", "szczur", "hipopotam", "chomik", "zyrafa", "slon", "polacy", "kon"};
     private String wordToGuess;
 
-    WordToGuess() {
+    WordRepository() {
         int randomNumber = (int) (Math.round(Math.random() * 10));
         wordToGuess = getWordToGuess(randomNumber);
-        System.out.println(wordToGuess);
     }
 
     private String getWordToGuess(int indexNumber) {
