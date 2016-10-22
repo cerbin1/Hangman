@@ -39,6 +39,7 @@ class Game {
 
         int questionIndex = (int) (Math.round(Math.random() * words.length));
         wordToGuess = words[questionIndex];
+        fillUsersWord(wordToGuess.length());
 
         while (true) {
             displayBlankWord();
