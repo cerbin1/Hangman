@@ -42,11 +42,11 @@ class Console {
         System.out.println("Nie udalo ci sie odgadnac literki.");
     }
 
-    static void displayPlayersLose() {
-        System.out.println("Przegrales");
+    static void displayPlayersLose(String guessedWord) {
+        System.out.println("Przegrales :/ \nWylosowane slowo to: " + guessedWord);
     }
 
-    static void displayPlayersWin(String guessedWord) {
-        System.out.println("Udalo Ci sie wygrac! \nWylosowane slowo to: " + guessedWord);
+    static void displayPlayersWin() {
+        System.out.println("\nUdalo Ci sie wygrac!");
     }
 }

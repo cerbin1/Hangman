@@ -20,12 +20,13 @@ class Game {
             }
 
             if (player.checkIfPlayerLose()) {
-                Console.displayPlayersLose();
+                Console.displayPlayersLose(word.getWordToGuess());
                 break;
             }
 
             if (player.checkIfWordIsGuessed()) {
-                Console.displayPlayersWin(word.getWordToGuess());
+                console.displayBlankWord(word, player);
+                Console.displayPlayersWin();
                 break;
             }
         }
