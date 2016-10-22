@@ -43,12 +43,8 @@ class Console {
     }
 
     Character getCharacterToCheck() {
-        askForCharacter();
-        return scanner.next().charAt(0);
-    }
-
-    private void askForCharacter() {
         System.out.print("\nPodaj literke: ");
+        return scanner.next().charAt(0);
     }
 
     void displayPlayerHitCharacter() {
