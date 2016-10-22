@@ -11,21 +11,6 @@ class Game {
         new Game().run();
     }
 
-    private static String[] hangmanCharacter = {"",
-            "\n_______",
-            "\n|\n|\n|\n|\n|\n|\n|_______",
-            "\n ________\n|\n|\n|\n|\n|\n|_______",
-            "\n ________\n|        |\n|\n|\n|\n|\n|_______",
-            "\n ________\n|        |\n|        O\n|\n|\n|\n|_______",
-            "\n ________\n|        |\n|        O\n|        |\n|\n|\n|_______",
-            "\n ________\n|        |\n|        O\n|       /|\n|\n|\n|_______",
-            "\n ________\n|        |\n|        O\n|       /|\\\n|\n|\n|_______",
-            "\n ________\n|        |\n|        O\n|       /|\\\n|        |\n|\n|_______",
-            "\n ________\n|        |\n|        O\n|       /|\\\n|        |\n|       / \n|_______",
-            "\n ________\n|        |\n|        O\n|       /|\\\n|        |\n|       / \\\n|_______"
-    };
-
-
     private String[] words = {
             "zubr", "kot", "pies", "szczur", "hipopotam", "chomik", "zyrafa", "slon", "polacy", "kon"
     };
@@ -120,12 +105,12 @@ class Game {
 
     void displayPlayerHitCharacter() {
         System.out.println("Odgadles litere!");
-        System.out.println(hangmanCharacter[fails]);
+        HangmanPrinter.print(fails);
     }
 
     void displayPlayerNoHitCharacter() {
         System.out.println("Nie udalo ci sie odgadnac literki. Mozesz sie jeszcze pomylic " + (11 - fails) + " razy.");
-        System.out.println(hangmanCharacter[fails]);
+        HangmanPrinter.print(fails);
     }
 
     static void displayPlayersLose(String guessedWord) {
