@@ -10,10 +10,11 @@ class Game {
     }
 
     private WordRepository wordRepository = new WordRepository();
+    private WordToGuess wordToGuess;
     private int fails = 0;
 
     private void run() {
-        WordToGuess wordToGuess = wordRepository.getRandomWord();
+        wordToGuess = wordRepository.getRandomWord();
 
         while (true) {
             System.out.print(wordToGuess.getBlankedWord());
@@ -27,17 +28,20 @@ class Game {
             HangmanPrinter.print(fails);
 
             if (playerLose()) {
-                System.out.println("Przegrales :/");
-                System.out.println("Wylosowane slowo to: " + wordToGuess.getWord());
+                notifyPlayerLose();
                 return;
             }
 
             if (wordToGuess.checkIfWordIsGuessed()) {
-                System.out.print(wordToGuess.getBlankedWord());
-                System.out.println("\nUdalo Ci sie wygrac!");
+                notifyPlayerWin();
                 return;
             }
         }
+    }
+
+    Character readCharacter() {
+        System.out.print("\nPodaj literke: ");
+        return scanner.next().charAt(0);
     }
 
     private void notifySuccessGuess() {
@@ -53,8 +57,13 @@ class Game {
         return fails >= 11;
     }
 
-    Character readCharacter() {
-        System.out.print("\nPodaj literke: ");
-        return scanner.next().charAt(0);
+    private void notifyPlayerWin() {
+        System.out.print(wordToGuess.getBlankedWord());
+        System.out.println("\nUdalo Ci sie wygrac!");
+    }
+
+    private void notifyPlayerLose() {
+        System.out.println("Przegrales :/");
+        System.out.println("Wylosowane slowo to: " + wordToGuess.getWord());
     }
 }
