@@ -12,16 +12,14 @@ class Game {
     }
 
     private WordRepository wordRepository = new WordRepository();
-    private String wordToGuess;
+    private WordToGuess wordToGuess;
 
-    List<Boolean> usersWord;
     private int fails = 0;
 
     private void run() {
         String name = askForName();
 
         wordToGuess = wordRepository.getRandomWord();
-        fillUsersWord(wordToGuess.length());
 
         while (true) {
             displayBlankWord();
@@ -45,16 +43,6 @@ class Game {
         }
     }
 
-    private void fillUsersWord(int length) {
-        usersWord = new ArrayList<>(length);
-        for (int i = 0; i < length; i++) {
-            usersWord.add(i, Boolean.FALSE);
-        }
-    }
-
-    boolean checkIfWordIsGuessed() {
-        return !usersWord.contains(Boolean.FALSE);
-    }
 
     void incrementChances() {
         fails++;
