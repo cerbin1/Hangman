@@ -41,22 +41,22 @@ class Game {
         wordToGuess = words[questionIndex];
 
         while (true) {
-            console.displayBlankWord();
-            if (word.checkIfCharacterIsInWord(console.getCharacterToCheck())) {
-                console.displayPlayerHitCharacter();
+            displayBlankWord();
+            if (word.checkIfCharacterIsInWord(getCharacterToCheck())) {
+                displayPlayerHitCharacter();
             } else {
                 player.incrementChances();
-                console.displayPlayerNoHitCharacter();
+                displayPlayerNoHitCharacter();
             }
 
             if (player.checkIfPlayerLose()) {
-                Console.displayPlayersLose(word.getWordToGuess());
+                displayPlayersLose(word.getWordToGuess());
                 break;
             }
 
             if (player.checkIfWordIsGuessed()) {
-                console.displayBlankWord();
-                Console.displayPlayersWin();
+                displayBlankWord();
+                displayPlayersWin();
                 break;
             }
         }
