@@ -113,8 +113,9 @@ class Game {
         HangmanPrinter.print(fails);
     }
 
-    static void displayPlayersLose(String guessedWord) {
-        System.out.println("Przegrales :/ \nWylosowane slowo to: " + guessedWord);
+    static void displayPlayersLose(String searchWord) {
+        System.out.println("Przegrales :/");
+        System.out.println("Wylosowane slowo to: " + searchWord);
     }
 
     static void displayPlayersWin() {
