@@ -19,12 +19,11 @@ class Game {
             System.out.print(wordToGuess.getBlankedWord());
             if (wordToGuess.guessLetter(readCharacter())) {
                 System.out.println("Odgadles litere!");
-                HangmanPrinter.print(fails);
             } else {
                 fails++;
                 System.out.println("Nie udalo ci sie odgadnac literki. Mozesz sie jeszcze pomylic " + (11 - fails) + " razy.");
-                HangmanPrinter.print(fails);
             }
+            HangmanPrinter.print(fails);
 
             if (checkIfPlayerLose()) {
                 System.out.println("Przegrales :/");
