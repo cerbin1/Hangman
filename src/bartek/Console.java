@@ -48,7 +48,7 @@ class Console {
     }
 
     private void askForCharacter() {
-        System.out.println("Podaj literke");
+        System.out.print("\nPodaj literke: ");
     }
 
     static void displayPlayerHitCharacter() {
