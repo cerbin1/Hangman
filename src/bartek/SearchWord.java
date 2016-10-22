@@ -21,15 +21,12 @@ public class SearchWord {
 
     public boolean guessLetter(char character) {
         for (int i = 0; i < word.length(); i++) {
-            if (word.charAt(i) == character) {
-                if (userWord.get(i)) {
-                    System.out.println("Odkryles juz ta literke!");
-                    return false;
-                }
+            if (word.charAt(i) == character && !userWord.get(i)) {
                 userWord.set(i, Boolean.TRUE);
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
     String getBlankedWord() {
