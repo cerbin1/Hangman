@@ -5,9 +5,9 @@ public class WordRepository {
             "zubr", "kot", "pies", "szczur", "hipopotam", "chomik", "zyrafa", "slon", "polacy", "kon"
     };
 
-    public WordToGuess getRandomWord() {
+    public SearchWord getRandomWord() {
         int questionIndex = (int) (Math.round(Math.random() * words.length));
         String randomWord = words[questionIndex];
-        return new WordToGuess(randomWord);
+        return new SearchWord(randomWord);
     }
 }

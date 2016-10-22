@@ -10,17 +10,17 @@ class Game {
     }
 
     private WordRepository wordRepository = new WordRepository();
-    private WordToGuess wordToGuess;
+    private SearchWord searchWord;
     private int fails = 0;
 
     private void run() {
-        wordToGuess = wordRepository.getRandomWord();
+        searchWord = wordRepository.getRandomWord();
 
         while (true) {
-            System.out.print(wordToGuess.getBlankedWord());
+            System.out.print(searchWord.getBlankedWord());
             Character character = readCharacter();
 
-            if (wordToGuess.guessLetter(character)) {
+            if (searchWord.guessLetter(character)) {
                 notifySuccessGuess();
             } else {
                 notifyFailedGuess();
@@ -32,7 +32,7 @@ class Game {
                 return;
             }
 
-            if (wordToGuess.isGuessed()) {
+            if (searchWord.isGuessed()) {
                 notifyPlayerWin();
                 return;
             }
@@ -58,12 +58,12 @@ class Game {
     }
 
     private void notifyPlayerWin() {
-        System.out.println(wordToGuess.getBlankedWord());
+        System.out.println(searchWord.getBlankedWord());
         System.out.println("Udalo Ci sie wygrac!");
     }
 
     private void notifyPlayerLose() {
         System.out.println("Przegrales :/");
-        System.out.println("Wylosowane slowo to: " + wordToGuess.getWord());
+        System.out.println("Wylosowane slowo to: " + searchWord.getWord());
     }
 }

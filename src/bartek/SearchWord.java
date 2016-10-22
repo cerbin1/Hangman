@@ -5,12 +5,12 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class WordToGuess {
-    private String wordToGuess;
+public class SearchWord {
+    private String word;
     private List<Boolean> userWord = new ArrayList<>();
 
-    public WordToGuess(String wordToGuess) {
-        this.wordToGuess = wordToGuess;
+    public SearchWord(String wordToGuess) {
+        this.word = wordToGuess;
         fillUsersWord(wordToGuess.length());
     }
 
@@ -21,8 +21,8 @@ public class WordToGuess {
 
     public boolean guessLetter(char character) {
         boolean isCharacterInWord = false;
-        for (int i = 0; i < wordToGuess.length(); i++) {
-            if (wordToGuess.charAt(i) == character) {
+        for (int i = 0; i < word.length(); i++) {
+            if (word.charAt(i) == character) {
                 if (userWord.get(i)) {
                     System.out.println("Odkryles juz ta literke!");
                     return isCharacterInWord;
@@ -37,9 +37,9 @@ public class WordToGuess {
 
     String getBlankedWord() {
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < wordToGuess.length(); i++) {
+        for (int i = 0; i < word.length(); i++) {
             if (userWord.get(i)) {
-                sb.append(wordToGuess.charAt(i));
+                sb.append(word.charAt(i));
                 sb.append(" ");
             } else {
                 sb.append("_ ");
@@ -53,6 +53,6 @@ public class WordToGuess {
     }
 
     public String getWord() {
-        return wordToGuess;
+        return word;
     }
 }
