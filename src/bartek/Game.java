@@ -36,11 +36,9 @@ class Game {
 
     private void run() {
         String name = askForName();
-        Player player = new Player("Marian", word.getWordToGuess().length()); //TODO change name to get it from user
 
-        int randomNumber = (int) (Math.round(Math.random() * 10));
-        wordToGuess = getWordToGuess(randomNumber);
-        Console console = new Console(player, word);
+        int questionIndex = (int) (Math.round(Math.random() * 10));
+        wordToGuess = getWordToGuess(questionIndex);
 
         while (true) {
             console.displayBlankWord();
