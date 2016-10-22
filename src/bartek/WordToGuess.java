@@ -22,11 +22,10 @@ class WordToGuess { // TODO rename to WordsRepository czy coś.
         boolean isCharacterInWord = false;
         for (int i = 0; i < wordToGuess.length(); i++) {
             if (wordToGuess.charAt(i) == character) {
-                if(player.usersWord.get(i)) {
+                if (player.usersWord.get(i)) {
                     System.out.println("Odkryles juz ta literke!");
                     return isCharacterInWord;
-                }
-                else {
+                } else {
                     player.usersWord.set(i, Boolean.TRUE);
                     isCharacterInWord = true;
                 }
