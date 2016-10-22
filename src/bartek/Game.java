@@ -31,18 +31,17 @@ class Game {
             }
 
             if (checkIfPlayerLose()) {
-                displayPlayersLose(wordToGuess);
+                displayPlayersLose(wordToGuess.getWord());
                 break;
             }
 
-            if (checkIfWordIsGuessed()) {
+            if (wordToGuess.checkIfWordIsGuessed()) {
                 displayBlankWord();
                 displayPlayersWin();
                 break;
             }
         }
     }
-
 
     void incrementChances() {
         fails++;

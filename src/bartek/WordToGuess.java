@@ -26,4 +26,8 @@ public class WordToGuess {
     boolean checkIfWordIsGuessed() {
         return !userWord.contains(Boolean.FALSE);
     }
+
+    public String getWord() {
+        return wordToGuess;
+    }
 }
