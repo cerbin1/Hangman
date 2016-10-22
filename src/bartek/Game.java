@@ -13,8 +13,6 @@ class Game {
     private int fails = 0;
 
     private void run() {
-        String name = askForName();
-
         WordToGuess wordToGuess = wordRepository.getRandomWord();
 
         while (true) {
@@ -43,11 +41,6 @@ class Game {
 
     boolean checkIfPlayerLose() {
         return fails == 11;
-    }
-
-    private String askForName() {
-        System.out.print("Wpisz swoje imie: ");
-        return scanner.nextLine();
     }
 
     Character getCharacterToCheck() {
