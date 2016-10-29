@@ -5,11 +5,11 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class SearchWord {
+class SearchWord {
     private String word;
     private List<Boolean> blankedLetters = new ArrayList<>();
 
-    public SearchWord(String wordToGuess) {
+    SearchWord(String wordToGuess) {
         this.word = wordToGuess;
         fillUsersWord(wordToGuess.length());
     }
@@ -19,7 +19,7 @@ public class SearchWord {
         Collections.fill(blankedLetters, Boolean.FALSE);
     }
 
-    public boolean guessLetter(char letter) {
+    boolean guessLetter(char letter) {
         for (int i = 0; i < word.length(); i++) {
             if (word.charAt(i) == letter && isLetterBlank(i)) {
                 revealLetter(i);
@@ -54,7 +54,7 @@ public class SearchWord {
         return !blankedLetters.contains(Boolean.FALSE);
     }
 
-    public String getWord() {
+    String getWord() {
         return word;
     }
 }

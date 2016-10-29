@@ -1,11 +1,11 @@
 package bartek;
 
-public class WordRepository {
+class WordRepository {
     private final String[] words = {
             "zubr", "kot", "pies", "szczur", "hipopotam", "chomik", "zyrafa", "slon", "polacy", "kon"
     };
 
-    public SearchWord getRandomWord() {
+    SearchWord getRandomWord() {
         int questionIndex = (int) (Math.floor(Math.random() * words.length));
         String randomWord = words[questionIndex];
         return new SearchWord(randomWord);
