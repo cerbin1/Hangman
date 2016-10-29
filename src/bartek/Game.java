@@ -39,7 +39,7 @@ class Game {
         }
     }
 
-    Character readCharacter() {
+    private Character readCharacter() {
         System.out.print("\nPodaj literke: ");
         return scanner.next().charAt(0);
     }
@@ -53,7 +53,7 @@ class Game {
         System.out.println("Nie udalo ci sie odgadnac literki. Mozesz sie jeszcze pomylic " + (9 - fails) + " razy.");
     }
 
-    boolean playerLose() {
+    private boolean playerLose() {
         return fails >= 9;
     }
 

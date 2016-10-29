@@ -1,6 +1,6 @@
 package bartek;
 
-public class HangmanPrinter {
+class HangmanPrinter {
     private final static String[] hangmanCharacter = {
             "\n|\n|\n|\n|\n|\n|\n|_______",
             "\n ________\n|\n|\n|\n|\n|\n|_______",
@@ -14,7 +14,7 @@ public class HangmanPrinter {
             "\n ________\n|        |\n|        O\n|       /|\\\n|        |\n|       / \\\n|_______"
     };
 
-    public static void print(int progress) {
+    static void print(int progress) {
         System.out.println(hangmanCharacter[progress]);
     }
 }
