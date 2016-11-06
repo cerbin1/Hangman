@@ -20,13 +20,15 @@ class SearchWord {
     }
 
     boolean guessLetter(char letter) {
+        boolean isLetterInWord = false;
+
         for (int i = 0; i < word.length(); i++) {
             if (word.charAt(i) == letter && isLetterBlank(i)) {
                 revealLetter(i);
-                return true;
+                isLetterInWord = true;
             }
         }
-        return false;
+        return isLetterInWord;
     }
 
     private boolean isLetterBlank(int i) {
