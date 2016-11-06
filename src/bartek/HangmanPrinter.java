@@ -2,6 +2,8 @@ package bartek;
 
 class HangmanPrinter {
     private final static String[] hangmanCharacter = {
+            "\n\n\n\n\n\n\n",
+            "\n\n\n\n\n\n\n_______",
             "\n|\n|\n|\n|\n|\n|\n|_______",
             "\n ________\n|\n|\n|\n|\n|\n|_______",
             "\n ________\n|        |\n|\n|\n|\n|\n|_______",

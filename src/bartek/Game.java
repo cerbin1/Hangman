@@ -49,12 +49,13 @@ class Game {
     }
 
     private void notifyFailedGuess() {
+        System.out.println(fails);
         fails++;
-        System.out.println("Nie udalo ci sie odgadnac literki. Mozesz sie jeszcze pomylic " + (9 - fails) + " razy.");
+        System.out.println("Nie udalo ci sie odgadnac literki. Mozesz sie jeszcze pomylic " + (11 - fails) + " razy.");
     }
 
     private boolean playerLose() {
-        return fails >= 9;
+        return fails == 11;
     }
 
     private void notifyPlayerWin() {
