@@ -38,16 +38,15 @@ class SearchWord {
     }
 
     String getBlankedWord() {
-        StringBuilder sb = new StringBuilder();
+        String blankedWord = "";
         for (int i = 0; i < word.length(); i++) {
             if (blankedLetters.get(i)) {
-                sb.append(word.charAt(i));
-                sb.append(" ");
+                blankedWord += Character.toString(word.charAt(i)) + " ";
             } else {
-                sb.append("_ ");
+                blankedWord += "_ ";
             }
         }
-        return sb.toString();
+        return blankedWord;
     }
 
     boolean isGuessed() {
